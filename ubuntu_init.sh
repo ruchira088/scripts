@@ -8,11 +8,14 @@ sudo apt-get install -y nodejs
 
 sudo apt-get install -y build-essential
 
-# Java
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
+# Java (Oracle version)
+# sudo add-apt-repository ppa:webupd8team/java
+# sudo apt-get update
 
-sudo apt-get install oracle-java8-installer -y
+# sudo apt-get install oracle-java8-installer -y
+
+# Java (OpenJDK)
+sudo apt-get install openjdk-8-jdk -y
 
 # Docker
 sudo apt-get install apt-transport-https ca-certificates software-properties-common -y
