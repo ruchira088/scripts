@@ -44,7 +44,7 @@ sudo apt-get install sbt -y
 # Summary
 java -version
 node -v
-docker version
+sudo docker version
 docker-compose --version
-sbt sbt-version
+sbt sbtVersion
 
