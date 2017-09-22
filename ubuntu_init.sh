@@ -32,7 +32,7 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker
 
 # Docker Compose
-sudo wget -O /usr/local/bin/docker-compose https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname -s`-`uname -m`
+sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # SBT
@@ -40,4 +40,11 @@ echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.li
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
 sudo apt-get update
 sudo apt-get install sbt -y
+
+# Summary
+java -version
+node -v
+docker version
+docker-compose --version
+sbt sbt-version
 
