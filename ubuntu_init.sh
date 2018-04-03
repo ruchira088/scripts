@@ -46,6 +46,13 @@ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89
 sudo apt-get update
 sudo apt-get install sbt -y
 
+# AWS CLI
+sudo apt-get install awscli -y
+
+# kubectl
+sudo apt install snapd -y
+sudo snap install kubectl --classic
+
 # Summary
 java -version
 node -v
