@@ -13,10 +13,6 @@ echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sud
 sudo apt-get update
 sudo apt-get install google-chrome-stable -y
 
-# kubectl
-sudo apt install snapd -y
-sudo snap install kubectl --classic
-
 # VirtualBox
 echo "deb https://download.virtualbox.org/virtualbox/debian `lsb_release --codename | cut -f2` contrib" | sudo tee /etc/apt/sources.list.d/virtualbox.list
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
