@@ -1,9 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-
-# curl and jq
-sudo apt-get install curl jq -y
+sudo apt-get install curl -y
 
 # NodeJS
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -49,7 +47,10 @@ sudo apt-get update
 sudo apt-get install sbt -y
 
 # AWS CLI
-sudo apt-get install awscli -y
+sudo apt-get install python-pip python-dev build-essential -y
+#pip install --upgrade pip
+pip install awscli --upgrade --user
+sudo ln -s $HOME/.local/bin/aws /usr/local/bin
 
 # kubectl
 sudo apt install snapd -y
@@ -57,8 +58,8 @@ sudo snap install kubectl --classic
 
 # Summary
 java -version
+aws --version
 node -v
 sudo docker version
 docker-compose --version
 sbt sbtVersion
-
