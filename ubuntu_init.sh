@@ -48,7 +48,7 @@ sudo apt-get install sbt -y
 sudo apt-get install python-pip python-dev build-essential -y && \
 #pip install --upgrade pip
 pip install awscli --upgrade --user && \
-sudo ln -s $HOME/.local/bin/aws /usr/local/bin
+sudo ln -sf $HOME/.local/bin/aws /usr/local/bin
 
 # Summary
 java -version && \
