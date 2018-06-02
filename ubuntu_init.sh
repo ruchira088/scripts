@@ -50,6 +50,12 @@ sudo apt-get install python-pip python-dev build-essential -y && \
 pip install awscli --upgrade --user && \
 sudo ln -sf $HOME/.local/bin/aws /usr/local/bin
 
+# Terraform
+sudo apt install unzip -y && \
+curl -o terraform.zip https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_linux_amd64.zip && \
+unzip terraform.zip && rm terraform.zip && chmod +x terraform && \
+sudo mv -f $PWD/terraform /usr/local/bin/
+
 # Summary
 java -version && \
 aws --version && \
