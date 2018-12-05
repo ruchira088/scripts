@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt update && \
-sudo apt install curl -y
+sudo apt install cur jq -y
 
 # NodeJS
 curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash - && \
