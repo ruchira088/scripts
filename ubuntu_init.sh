@@ -4,7 +4,7 @@ sudo apt update && \
 sudo apt install curl jq -y
 
 # NodeJS
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash - && \
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
 sudo apt install nodejs build-essential -y
 
 # yarn
@@ -35,7 +35,7 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker
 
 # Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # SBT
@@ -52,7 +52,7 @@ sudo ln -sf $HOME/.local/bin/aws /usr/local/bin
 
 # Terraform
 sudo apt install unzip -y && \
-curl -o terraform.zip https://releases.hashicorp.com/terraform/0.11.10/terraform_0.11.10_linux_amd64.zip && \
+curl -o terraform.zip https://releases.hashicorp.com/terraform/0.11.13/terraform_0.11.13_linux_amd64.zip && \
 unzip terraform.zip && rm terraform.zip && chmod +x terraform && \
 sudo mv -f $PWD/terraform /usr/local/bin/
 
