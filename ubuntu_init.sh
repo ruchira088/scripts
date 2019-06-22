@@ -1,10 +1,14 @@
 #!/bin/bash
 
+NODEJS_VERSION=12.x
+DOCKER_COMPOSE_VERSION=1.24.0
+TERRAFORM_VERSION=0.12.2
+
 sudo apt update && \
 sudo apt install curl jq -y
 
 # NodeJS
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && \
+curl -sL https://deb.nodesource.com/setup_"$NODEJS_VERSION" | sudo -E bash - && \
 sudo apt install nodejs build-essential -y
 
 # yarn
@@ -29,13 +33,13 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && 
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
 sudo apt update && \
 
-sudo apt install docker-ce -y
-sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo apt install docker-ce -y && \
+sudo groupadd docker && \
+sudo usermod -aG docker $USER && \
 sudo systemctl enable docker
 
 # Docker Compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/$DOCKER_COMPOSE_VERSION/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # SBT
@@ -52,7 +56,7 @@ sudo ln -sf $HOME/.local/bin/aws /usr/local/bin
 
 # Terraform
 sudo apt install unzip -y && \
-curl -o terraform.zip https://releases.hashicorp.com/terraform/0.12.0/terraform_0.12.0_linux_amd64.zip && \
+curl -o terraform.zip https://releases.hashicorp.com/terraform/"$TERRAFORM_VERSION"/terraform_"$TERRAFORM_VERSION"_linux_amd64.zip && \
 unzip terraform.zip && rm terraform.zip && chmod +x terraform && \
 sudo mv -f $PWD/terraform /usr/local/bin/
 
