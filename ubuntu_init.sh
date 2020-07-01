@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-NODEJS_VERSION=13.x
-DOCKER_COMPOSE_VERSION=1.25.0
-TERRAFORM_VERSION=0.12.19
+NODEJS_VERSION=14.x
+DOCKER_COMPOSE_VERSION=1.26.0
+TERRAFORM_VERSION=0.12.28
 
 sudo apt update && \
 sudo apt install curl jq -y
